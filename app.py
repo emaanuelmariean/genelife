@@ -225,5 +225,6 @@ def dashboard():
 # Avvio dell'applicazione
 if __name__ == '__main__':
     with app.app_context():
-        db.create_all()
+        db.drop_all()  # Elimina le tabelle esistenti (per evitare conflitti)
+        db.create_all()  # Crea tutte le tabelle
     app.run(host='0.0.0.0', port=5000, debug=True)
