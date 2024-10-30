@@ -1,0 +1,53 @@
+<!-- templates/calendar.html -->
+
+{% extends 'base.html' %}
+{% block title %}Meal Calendar{% endblock %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-6">Meal Calendar</h1>
+
+<!-- Weekly Meal Plan -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {% for date, meals in week_meals.items() %}
+    <div class="bg-white p-6 rounded shadow">
+        <h2 class="text-xl font-semibold mb-4">{{ date.strftime('%A %d/%m/%Y') }}</h2>
+        {% if meals %}
+            {% for meal in meals %}
+            <div class="mb-4">
+                <h3 class="text-lg font-semibold">{{ meal.meal_type.capitalize() }}: {{ meal.name }}</h3>
+                <p class="mb-1">Calories: {{ meal.calories }} kcal</p>
+                <p class="mb-1">Protein: {{ meal.protein }} g</p>
+                <p class="mb-1">Carbohydrates: {{ meal.carbs }} g</p>
+                <p class="mb-1">Fat: {{ meal.fat }} g</p>
+                <p class="mb-1">Fiber: {{ meal.fiber }} g</p>
+                <details class="mt-2">
+                    <summary class="font-semibold text-blue-600 cursor-pointer">Ingredients and Nutrients</summary>
+                    <div class="mt-2">
+                        <p class="font-semibold">Ingredients:</p>
+                        <ul class="list-disc list-inside">
+                            {% for ingredient in meal.ingredients %}
+                            <li>{{ ingredient.name }} - {{ ingredient.amount }} {{ ingredient.unit }}</li>
+                            {% endfor %}
+                        </ul>
+                        <p class="font-semibold mt-2">Vitamins:</p>
+                        <ul class="list-disc list-inside">
+                            {% for vitamin, amount in meal.vitamins.items() %}
+                            <li>{{ vitamin }}: {{ amount }} mg</li>
+                            {% endfor %}
+                        </ul>
+                        <p class="font-semibold mt-2">Minerals:</p>
+                        <ul class="list-disc list-inside">
+                            {% for mineral, amount in meal.minerals.items() %}
+                            <li>{{ mineral }}: {{ amount }} mg</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </details>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No meals planned for this day.</p>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

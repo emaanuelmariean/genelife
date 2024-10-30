@@ -1,0 +1,32 @@
+<!-- templates/weight_chart.html -->
+
+{% extends 'base.html' %}
+{% block title %}Grafico Peso{% endblock %}
+{% block content %}
+<h1 class="text-3xl font-bold mb-6">Grafico Peso</h1>
+<div class="bg-white p-6 rounded shadow-md mb-6">
+    <h2 class="text-2xl font-semibold mb-4">Inserisci il tuo peso</h2>
+    <form id="weightForm">
+        <div class="mb-4">
+            <label for="weightDate" class="block mb-1">Data:</label>
+            <input type="date" id="weightDate" name="weightDate" required class="w-full px-3 py-2 border rounded-md">
+        </div>
+        <div class="mb-4">
+            <label for="weightValue" class="block mb-1">Peso (kg):</label>
+            <input type="number" id="weightValue" name="weightValue" required step="0.1" class="w-full px-3 py-2 border rounded-md">
+        </div>
+        <button type="submit" class="w-full bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">Salva Peso</button>
+    </form>
+</div>
+<div class="bg-white p-6 rounded shadow-md">
+    <canvas id="weightChart"></canvas>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<!-- Includi Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Includi il tuo file JavaScript per il grafico del peso -->
+<script src="{{ url_for('static', filename='js/weight_chart.js') }}"></script>
+{% endblock %}

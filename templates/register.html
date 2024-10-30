@@ -1,0 +1,52 @@
+<!-- templates/register.html -->
+
+{% extends 'base.html' %}
+{% block title %}Registrazione{% endblock %}
+{% block content %}
+<div class="max-w-md mx-auto bg-white p-8 rounded shadow">
+    <h2 class="text-2xl font-bold mb-6">Registrazione Utente</h2>
+    <form method="post">
+        <div class="mb-4">
+            <label class="block text-gray-700">Username</label>
+            <input type="text" name="username" class="w-full border border-gray-300 p-2 rounded" required>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Età</label>
+            <input type="number" name="age" class="w-full border border-gray-300 p-2 rounded" required>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Genere</label>
+            <select name="gender" class="w-full border border-gray-300 p-2 rounded" required>
+                <option value="male">Maschio</option>
+                <option value="female">Femmina</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Peso (kg)</label>
+            <input type="number" step="any" name="weight" class="w-full border border-gray-300 p-2 rounded" required>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Altezza (cm)</label>
+            <input type="number" step="any" name="height" class="w-full border border-gray-300 p-2 rounded" required>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700">Livello di Attività</label>
+            <select name="activity_level" class="w-full border border-gray-300 p-2 rounded" required>
+                <option value="sedentary">Sedentario</option>
+                <option value="lightlyActive">Leggermente Attivo</option>
+                <option value="moderatelyActive">Moderatamente Attivo</option>
+                <option value="veryActive">Molto Attivo</option>
+            </select>
+        </div>
+        <div class="mb-6">
+            <label class="block text-gray-700">Obiettivo</label>
+            <select name="goal" class="w-full border border-gray-300 p-2 rounded" required>
+                <option value="maintain">Mantenimento</option>
+                <option value="weightLoss">Perdita di Peso</option>
+                <option value="muscleGain">Aumento Massa Muscolare</option>
+            </select>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded">Registrati</button>
+    </form>
+</div>
+{% endblock %}

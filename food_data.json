@@ -1,0 +1,193 @@
+{
+  "colazione": [
+  {
+  "name": "Yogurt magro con avena e mela",
+  "ingredients": [
+  { "name": "Yogurt magro", "amount": 150, "unit": "g" },
+  { "name": "Avena", "amount": 30, "unit": "g" },
+  { "name": "Mela", "amount": 1, "unit": "piccola" }
+  ],
+  "calories": 250,
+  "protein": 15,
+  "carbs": 40,
+  "fat": 3,
+  "fiber": 6,
+  "vitamins": { "B2": 0.4, "B12": 1, "C": 8 },
+  "minerals": { "Calcium": 250, "Phosphorus": 200, "Potassium": 350 }
+  },
+  {
+  "name": "Fette di tacchino con pane integrale e avocado",
+  "ingredients": [
+  { "name": "Tacchino a fette", "amount": 60, "unit": "g" },
+  { "name": "Pane integrale", "amount": 1, "unit": "fetta" },
+  { "name": "Avocado", "amount": 30, "unit": "g" }
+  ],
+  "calories": 280,
+  "protein": 20,
+  "carbs": 25,
+  "fat": 12,
+  "fiber": 5,
+  "vitamins": { "B3": 4, "E": 2, "K": 10 },
+  "minerals": { "Iron": 2, "Potassium": 400, "Magnesium": 50 }
+  },
+  {
+  "name": "Ricotta con pera e noci",
+  "ingredients": [
+  { "name": "Ricotta magra", "amount": 100, "unit": "g" },
+  { "name": "Pera", "amount": 1, "unit": "piccola" },
+  { "name": "Noci", "amount": 10, "unit": "g" }
+  ],
+  "calories": 250,
+  "protein": 15,
+  "carbs": 25,
+  "fat": 12,
+  "fiber": 4,
+  "vitamins": { "A": 200, "E": 0.5, "K": 3 },
+  "minerals": { "Calcium": 200, "Magnesium": 40, "Phosphorus": 200 }
+  }
+  ],
+  "spuntino": [
+  {
+  "name": "Bastoncini di carota e finocchio",
+  "ingredients": [
+  { "name": "Carote", "amount": 100, "unit": "g" },
+  { "name": "Finocchio", "amount": 100, "unit": "g" }
+  ],
+  "calories": 70,
+  "protein": 2,
+  "carbs": 15,
+  "fat": 0,
+  "fiber": 6,
+  "vitamins": { "A": 15000, "C": 15, "K": 40 },
+  "minerals": { "Potassium": 600, "Magnesium": 40, "Calcium": 80 }
+  },
+  {
+  "name": "Mela con mandorle",
+  "ingredients": [
+  { "name": "Mela", "amount": 1, "unit": "media" },
+  { "name": "Mandorle", "amount": 15, "unit": "g" }
+  ],
+  "calories": 160,
+  "protein": 4,
+  "carbs": 20,
+  "fat": 9,
+  "fiber": 5,
+  "vitamins": { "E": 3, "B2": 0.2, "B6": 0.1 },
+  "minerals": { "Magnesium": 50, "Phosphorus": 80, "Potassium": 200 }
+  },
+  {
+  "name": "Yogurt magro con melone",
+  "ingredients": [
+  { "name": "Yogurt magro", "amount": 150, "unit": "g" },
+  { "name": "Melone", "amount": 150, "unit": "g" }
+  ],
+  "calories": 120,
+  "protein": 10,
+  "carbs": 20,
+  "fat": 0,
+  "fiber": 2,
+  "vitamins": { "A": 3000, "C": 40, "B12": 0.5 },
+  "minerals": { "Calcium": 200, "Potassium": 500, "Magnesium": 30 }
+  }
+  ],
+  "pranzo": [
+  {
+  "name": "Petto di pollo con zucchine e riso integrale",
+  "ingredients": [
+  { "name": "Petto di pollo", "amount": 120, "unit": "g" },
+  { "name": "Zucchine", "amount": 200, "unit": "g" },
+  { "name": "Riso integrale", "amount": 60, "unit": "g" },
+  { "name": "Olio d'oliva", "amount": 1, "unit": "cucchiaino" }
+  ],
+  "calories": 400,
+  "protein": 35,
+  "carbs": 45,
+  "fat": 10,
+  "fiber": 6,
+  "vitamins": { "B3": 12, "B6": 1, "C": 30 },
+  "minerals": { "Phosphorus": 300, "Potassium": 700, "Magnesium": 100 }
+  },
+  {
+  "name": "Merluzzo al vapore con patate dolci e spinaci",
+  "ingredients": [
+  { "name": "Merluzzo", "amount": 150, "unit": "g" },
+  { "name": "Patate dolci", "amount": 150, "unit": "g" },
+  { "name": "Spinaci", "amount": 100, "unit": "g" },
+  { "name": "Olio d'oliva", "amount": 1, "unit": "cucchiaino" }
+  ],
+  "calories": 380,
+  "protein": 30,
+  "carbs": 40,
+  "fat": 8,
+  "fiber": 8,
+  "vitamins": { "A": 18000, "C": 30, "B12": 2, "K": 500 },
+  "minerals": { "Potassium": 1200, "Magnesium": 100, "Iron": 4 }
+  },
+  {
+  "name": "Insalata di farro con tacchino e verdure",
+  "ingredients": [
+  { "name": "Farro", "amount": 60, "unit": "g" },
+  { "name": "Tacchino", "amount": 100, "unit": "g" },
+  { "name": "Carote", "amount": 100, "unit": "g" },
+  { "name": "Finocchio", "amount": 100, "unit": "g" },
+  { "name": "Olio d'oliva", "amount": 1, "unit": "cucchiaino" }
+  ],
+  "calories": 420,
+  "protein": 30,
+  "carbs": 50,
+  "fat": 12,
+  "fiber": 10,
+  "vitamins": { "A": 15000, "C": 15, "B3": 8, "E": 3 },
+  "minerals": { "Iron": 3, "Magnesium": 80, "Potassium": 800 }
+  }
+  ],
+  "cena": [
+  {
+  "name": "Salmone alla griglia con broccoli e avocado",
+  "ingredients": [
+  { "name": "Salmone", "amount": 120, "unit": "g" },
+  { "name": "Broccoli", "amount": 200, "unit": "g" },
+  { "name": "Avocado", "amount": 50, "unit": "g" }
+  ],
+  "calories": 400,
+  "protein": 35,
+  "carbs": 15,
+  "fat": 25,
+  "fiber": 10,
+  "vitamins": { "D": 10, "B12": 5, "C": 100, "K": 200 },
+  "minerals": { "Potassium": 1000, "Magnesium": 80, "Omega-3": 2000 }
+  },
+  {
+  "name": "Zuppa di lenticchie con carote e spinaci",
+  "ingredients": [
+  { "name": "Lenticchie", "amount": 60, "unit": "g" },
+  { "name": "Carote", "amount": 100, "unit": "g" },
+  { "name": "Spinaci", "amount": 100, "unit": "g" },
+  { "name": "Olio d'oliva", "amount": 1, "unit": "cucchiaino" }
+  ],
+  "calories": 350,
+  "protein": 20,
+  "carbs": 50,
+  "fat": 8,
+  "fiber": 15,
+  "vitamins": { "A": 20000, "C": 20, "K": 500, "B9": 250 },
+  "minerals": { "Iron": 6, "Potassium": 900, "Magnesium": 100 }
+  },
+  {
+  "name": "Sgombro con zucchine e fagioli",
+  "ingredients": [
+  { "name": "Sgombro", "amount": 120, "unit": "g" },
+  { "name": "Zucchine", "amount": 200, "unit": "g" },
+  { "name": "Fagioli", "amount": 60, "unit": "g" },
+  { "name": "Olio d'oliva", "amount": 1, "unit": "cucchiaino" }
+  ],
+  "calories": 380,
+  "protein": 30,
+  "carbs": 30,
+  "fat": 18,
+  "fiber": 10,
+  "vitamins": { "D": 8, "B12": 8, "C": 30, "E": 2 },
+  "minerals": { "Omega-3": 2500, "Potassium": 800, "Magnesium": 100, "Iron": 3 }
+  }
+  ]
+  }
