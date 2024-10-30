@@ -1,50 +1,48 @@
-<!-- templates/dashboard.html -->
-
 {% extends 'base.html' %}
 {% block title %}Dashboard{% endblock %}
 {% block content %}
-<h2 class="text-3xl font-bold mb-6">Welcome, {{ user.username }}</h2>
+<h2 class="text-3xl font-bold mb-6">Benvenuto, {{ user.username }}</h2>
 
 <!-- User's Nutritional Needs -->
 <div class="bg-white p-6 rounded shadow-md mb-6">
-    <h3 class="text-2xl font-semibold mb-4">Your Daily Nutritional Needs</h3>
-    <p class="mb-2">Calories: {{ user_needs.calories|round }} kcal</p>
-    <p class="mb-2">Protein: {{ user_needs.protein|round(1) }} g</p>
-    <p class="mb-2">Carbohydrates: {{ user_needs.carbs|round(1) }} g</p>
-    <p class="mb-2">Fat: {{ user_needs.fat|round(1) }} g</p>
+    <h3 class="text-2xl font-semibold mb-4">I Tuoi Bisogni Nutrizionali Giornalieri</h3>
+    <p class="mb-2">Calorie: {{ user_needs.calories|round }} kcal</p>
+    <p class="mb-2">Proteine: {{ user_needs.protein|round(1) }} g</p>
+    <p class="mb-2">Carboidrati: {{ user_needs.carbs|round(1) }} g</p>
+    <p class="mb-2">Grassi: {{ user_needs.fat|round(1) }} g</p>
 </div>
 
 <!-- Today's Meal Plan -->
-<h3 class="text-2xl font-semibold mb-4">Today's Meal Plan</h3>
+<h3 class="text-2xl font-semibold mb-4">Piano Alimentare di Oggi</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     {% for meal in meals %}
     <div class="bg-white p-6 rounded shadow">
         <h4 class="text-xl font-semibold mb-2">{{ meal.meal_type.capitalize() }}: {{ meal.name }}</h4>
-        <p class="mb-1">Calories: {{ meal.calories }} kcal</p>
-        <p class="mb-1">Protein: {{ meal.protein }} g</p>
-        <p class="mb-1">Carbohydrates: {{ meal.carbs }} g</p>
-        <p class="mb-1">Fat: {{ meal.fat }} g</p>
-        <p class="mb-1">Fiber: {{ meal.fiber }} g</p>
+        <p class="mb-1">Calorie: {{ meal.calories }} kcal</p>
+        <p class="mb-1">Proteine: {{ meal.protein }} g</p>
+        <p class="mb-1">Carboidrati: {{ meal.carbs }} g</p>
+        <p class="mb-1">Grassi: {{ meal.fat }} g</p>
+        <p class="mb-1">Fibre: {{ meal.fiber }} g</p>
         {% if meal.ingredients %}
         <details class="mt-2">
-            <summary class="font-semibold text-blue-600 cursor-pointer">Ingredients and Nutrients</summary>
+            <summary class="font-semibold text-blue-600 cursor-pointer">Ingredienti e Nutrienti</summary>
             <div class="mt-2">
-                <p class="font-semibold">Ingredients:</p>
+                <p class="font-semibold">Ingredienti:</p>
                 <ul class="list-disc list-inside">
                     {% for ingredient in meal.ingredients %}
-                    <li>{{ ingredient.name }} - {{ ingredient.amount }} {{ ingredient.unit }}</li>
+                    <li>{{ ingredient }}</li>
                     {% endfor %}
                 </ul>
-                <p class="font-semibold mt-2">Vitamins:</p>
+                <p class="font-semibold mt-2">Vitamine:</p>
                 <ul class="list-disc list-inside">
                     {% for vitamin, amount in meal.vitamins.items() %}
-                    <li>{{ vitamin }}: {{ amount }} mg</li>
+                    <li>{{ vitamin }}: {{ amount }}</li>
                     {% endfor %}
                 </ul>
-                <p class="font-semibold mt-2">Minerals:</p>
+                <p class="font-semibold mt-2">Minerali:</p>
                 <ul class="list-disc list-inside">
                     {% for mineral, amount in meal.minerals.items() %}
-                    <li>{{ mineral }}: {{ amount }} mg</li>
+                    <li>{{ mineral }}: {{ amount }}</li>
                     {% endfor %}
                 </ul>
             </div>
