@@ -13,8 +13,14 @@ app.config['SECRET_KEY'] = os.urandom(24)  # Sostituisci con una chiave segreta 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///piano_alimentare.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 migrate = Migrate(app, db)
+
+def init_app(app):
+    db.init_app(app)
+    migrate.init_app(app, db)
+
+init_app(app)
 
 # Definizione dei modelli del database
 class User(db.Model):
