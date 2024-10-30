@@ -1,35 +1,52 @@
-
-
-
+<!-- templates/base.html -->
 
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Piano Alimentare App{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <!-- Includi Tailwind CSS e altri CSS se necessario -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
+    <title>{% block title %}Genelife{% endblock %}</title>
+    <!-- Link a Tailwind CSS (se lo utilizzi) -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Link al tuo file CSS personalizzato -->
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
 </head>
-<body class="bg-blue-50">
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-blue-700">Piano Alimentare App</h1>
-            {% if session.get('user_id') %}
+<body class="bg-gray-100">
+    <nav>
+        <div class="container flex justify-between items-center py-4">
             <div>
-                <a href="{{ url_for('dashboard') }}" class="text-gray-700 hover:text-blue-500 mx-2">Panoramica</a>
-                <a href="{{ url_for('calendar') }}" class="text-gray-700 hover:text-blue-500 mx-2">Calendario Pasti</a>
-                <a href="{{ url_for('weight_chart') }}" class="text-gray-700 hover:text-blue-500 mx-2">Grafico Peso</a>
-                <a href="{{ url_for('logout') }}" class="text-red-500 hover:text-red-700 mx-2">Logout</a>
+                <a href="{{ url_for('dashboard') }}" class="text-2xl font-bold text-indigo-600">GENELIFE</a>
             </div>
-            {% endif %}
+            <div class="nav-right">
+                {% if session['user_id'] %}
+                    <a href="{{ url_for('dashboard') }}" class="text-gray-700 hover:text-indigo-600">Dashboard</a>
+                    <a href="{{ url_for('calendar_view') }}" class="text-gray-700 hover:text-indigo-600">Calendario</a>
+                    <a href="{{ url_for('weight_chart_route') }}" class="text-gray-700 hover:text-indigo-600">Grafico Peso</a>
+                    <a href="{{ url_for('logout') }}" class="text-red-500 hover:text-red-600">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="text-gray-700 hover:text-indigo-600">Login</a>
+                    <a href="{{ url_for('register') }}" class="text-blue-500 hover:text-blue-600">Registrati</a>
+                {% endif %}
+            </div>
         </div>
-    </header>
-    <main class="container mx-auto px-4 py-6">
+    </nav>
+
+    <div class="container mx-auto px-4 py-6">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="alerts mb-4">
+              {% for message in messages %}
+                <div class="alert alert-error bg-red-100 text-red-700 p-4 rounded mb-2">
+                    {{ message }}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
         {% block content %}{% endblock %}
-    </main>
-    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    </div>
+
+    <!-- Blocco per eventuali script aggiuntivi -->
+    {% block scripts %}
+    {% endblock %}
 </body>
 </html>
